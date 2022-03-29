@@ -25,6 +25,14 @@ Sample Output 2 :
 #include <iostream>
 using namespace std;
 
+int sum2(int arr[], int n){
+    if(n == 0){
+        return 0;
+    }
+
+    return arr[0] + sum2(arr + 1, n - 1);
+}
+
 int sum(int arr[], int n)
 {
     if (n == 1)
@@ -48,4 +56,16 @@ int main()
     }
 
     cout << sum(input, n) << endl;
+
+    cout << sum2(input, n) << endl;
 }
+
+/*
+Input:
+4
+2 3 4 5
+
+Output:
+14
+14
+*/
